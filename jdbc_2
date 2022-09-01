@@ -1,0 +1,52 @@
+Select * from companies
+
+--1. Örnek: companies tablosundan en yüksek ikinci number_of_employees değeri olan
+--company ve number_of_employees değerlerini çağırın.
+
+--1.Yol:OFFSET ve FETCH NEXT kullanarak
+Select company, number_of_employees
+From companies
+order by number_of_employees desc
+Offset 1 Row 
+Fetch next 1 Row Only
+
+
+-- *************** 2.Yol:OFFSET ve LİMİT kullanarak ****************
+Select company, number_of_employees
+From companies
+order by number_of_employees
+desc limit 1 offset 1
+
+
+--3.Yol:
+Select company, number_of_employees
+From companies
+Where number_of_employees =
+(Select max(number_of_employees)
+from companies Where number_of_employees<(Select max(number_of_employees) 
+From companies))
+							
+                           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
