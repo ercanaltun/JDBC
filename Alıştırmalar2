@@ -1,0 +1,6 @@
+Select * from cars
+
+Insert into cars values(101,'Toyota','Corolla',2018);
+Insert into cars values(102,'Opel','Corsa',2019);						
+Insert into cars values(103,'Honda','Civic',2017);						
+Insert into cars values(104,'Mercedes','E360',2015);				
