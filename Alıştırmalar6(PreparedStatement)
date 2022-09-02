@@ -1,0 +1,30 @@
+Select * from pc
+--Soru-1:id si 5001 den buyuk olanların hdd sini 400 olarak güncelleyin
+--bunların tüm değerlerini çağırın
+
+Update pc set hdd='400gb ssd' where id>500;
+Select * from pc where id>500
+
+--------------------------------------------------------
+
+--Soru-2: a veya h ile başlayan markaların ram'ini 16gb olarak güncelleyin
+-- ve bunlara ait tüm değerleri çağırın
+
+Update pc Set ram='16gb' Where marka ~* '^[ah](.*)'
+
+Select * from pc Where marka ~* '^[ah](.*)'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

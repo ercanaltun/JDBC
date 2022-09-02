@@ -1,0 +1,16 @@
+select * from pc
+
+--soru-1: fiyatı ortalamadan az olan
+--fiyatların değerlerini 24000 olarak UPDATE edin.
+
+Update pc Set fiyat =24000 where fiyat< (Select avg(fiyat) From pc)
+
+-----------------------------------------------------
+
+--Soru-2:Ram'i 8gb olanları 16 gb olarak updete edelim
+
+Update pc Set ram='16gb' where ram='8gb'
+
+
+
+

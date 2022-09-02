@@ -1,0 +1,32 @@
+Create table pc
+(id int,marka varchar(20),hdd varchar(20),ram varchar(20),fiyat int);
+
+Insert into pc Values(500,'Dell','500gb ssd','16gb','25000');
+Insert into pc Values(501,'HP','300gb ssd','8gb','20000');
+Insert into pc Values(502,'Asus','300gb ssd','8gb','22000');
+Insert into pc Values(503,'Casper','500gb ssd','16gb','23000');
+
+Select * from pc 
+order by fiyat desc
+limit 1 offset 1
+
+Select marka,fiyat from pc
+Where ram='8gb'
+
+--Soru-3:Baş harfi A veya C olan markaların değerlerini getir
+Select * from pc
+where marka ilike 'a%' or marka ilike 'c%'
+
+Select * from pc where marka ~* '^[ac](.*)'
+
+
+
+
+
+
+
+
+
+
+
+
