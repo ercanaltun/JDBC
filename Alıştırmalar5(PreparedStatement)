@@ -1,0 +1,29 @@
+Select * from pc
+
+
+--Soru-1:PreparedStatment kullanarak markası Asus olanın
+--fiyatını 23000 olarak güncelleyin
+Update pc set fiyat=23000 where marka='Asus'
+
+-------------------------------------------------
+
+--Soru-2: PreparedStatment kullanarak fiyatı 20000 den büyük olan
+-- markaların ram ini 16gb  olarak güncelleyin
+
+Update pc set ram='16gb' where fiyat>20000
+
+--------------------------------------------------------
+
+--Soru3:Markası HP olannın fiyatını 20000 olarak güncelleyip
+--HP ye ait tüm bilgileri çağırın
+Select * from pc Where marka='HP';
+
+
+
+
+
+
+
+
+
+
