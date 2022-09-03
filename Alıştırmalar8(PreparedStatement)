@@ -1,0 +1,7 @@
+Create table teams(foundation_date int,name varchar(20),colours varchar(30),champions int);
+Insert into teams values(1903,'Besiktas','Black and White',16);
+Insert into teams values(1905,'Galatasaray','Yellow and Red',22);
+Insert into teams values(1907,'Fenerbahce','Yellow and Navy',19);
+Insert into teams values(1969,'Trabzonspor','Burgundy and Blue',7);
+
+Select * From teams

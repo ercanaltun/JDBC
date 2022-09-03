@@ -1,0 +1,11 @@
+Create table mobile(id int,name varchar(20),model varchar(20),price varchar(20));
+
+Insert into mobile values(1001,'Samsung','A85',8000);
+Insert into mobile values(1002,'Iphone','S12',10000);
+Insert into mobile values(1003,'Lg','Q8',7000);
+
+select * from mobile;
+
+Update mobile set price=9000 where id in(1001,1003)
+
+Select * from mobile where id in(1001,1003)
