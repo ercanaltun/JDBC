@@ -1,0 +1,107 @@
+SELECT *
+FROM isciler;
+
+SELECT *
+FROM personel6;
+
+-- 1) Her iki tablodaki ortak id’leri ve 
+--     personel6 tablosunda bu id’ye sahip isimleri
+-- isme gore sirali olarak listeleyen query yaziniz
+
+Select p.isim,p.id from personel6 p
+Where Exists(Select id from isciler i Where p.id=i.id)
+Order by isim;
+-------------------------------------------------------------------------------------------
+
+-- 2) Her iki tablodaki ortak id ve isme sahip kayitlari listeleyen query yaziniz
+
+Select isim,id from personel6
+Intersect
+Select isim,id from isciler;
+-------------------------------------------------------------------------------------------
+
+-- 3) Persone6 tablosunda kac farkli sehirden personel var?
+Select  count(Distinct sehir) from personel6;
+-------------------------------------------------------------------------------------------
+
+-- 4) Personel6 tablosunda id’si cift sayi
+--olan personel’in tum bilgilerini listeleyen Query yaziniz
+//1.Yol:
+Select * from personel6
+Where id%2=0
+
+--
+.Yol:
+Select * from personel6
+Where Mod(id,2)=0;
+-------------------------------------------------------------------------------------------
+
+-- 5) Personel6 tablosunda kac tane kayit oldugunu gosteren query yazin
+--1:yol:
+Select count(*) from personel6;
+
+--2.Yol:
+Select count(id)from personel6;
+-------------------------------------------------------------------------------------------
+
+--6) Isciler tablosunda en yuksek maasi alan kisinin tum bilgilerini gosteren query yazin
+--1.Yol:
+Select * from isciler
+order by maas desc limit 1;
+
+--2.Yol:
+Select * from isciler
+Where maas=(Select max(maas) from isciler);
+
+-------------------------------------------------------------------------------------------
+
+--7) Personel6 tablosunda en dusuk maasi alan kisinin tum bilgilerini gosteren query yazin
+--1:Yol:
+Select * from personel6
+Where maas=(Select min(maas) from personel6);
+
+--2.Yol:
+Select * from personel6
+Order by maas limit 1
+
+-------------------------------------------------------------------------------------------
+
+-- 8) Isciler tablosunda ikinci en yuksek maasi maasi gosteren query yazin
+--1.Yol:
+Select max(maas) from personel6
+Where maas<(Select max(maas) from personel6);
+
+--2.Yol:
+Select maas from personel6
+order by maas  desc limit 1 offset 1 ;
+
+-------------------------------------------------------------------------------------------
+
+-- 9) Isciler tablosunda ikinci en yuksek maasi alan
+--kisinin tum bilgilerini listeleyen sorgu yaziniz
+
+Select * from isciler
+order by maas desc limit 1 offset 1;
+
+
+-- Isciler tablosunda en yuksek maasi alan iscinin disindaki tum iscilerin, 
+--tum bilgilerini gosteren query yazin
+
+Select * from isciler
+Where maas <> (Select max(maas) from isciler) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
